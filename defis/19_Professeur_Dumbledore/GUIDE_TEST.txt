@@ -1,0 +1,6 @@
+(Optionnel) Place quelques .wav nommés comme: lumos_1.wav, nox_1.wav, expelliarmus_2.wav dans defis/19_Professeur_Dumbledore/data/samples puis:
+cd defis/19_Professeur_Dumbledore
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+python recognize_spells.py --input data/samples --out outputs --model tiny
+python evaluate.py --pred outputs/predictions.csv --out outputs

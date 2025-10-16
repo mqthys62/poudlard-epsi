@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patronus EPSI - Animation de Chargement</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0e27;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Container principal */
+        .patronus-loader {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Phoenix central */
+        .phoenix {
+            position: relative;
+            width: 100px;
+            height: 120px;
+            animation: phoenixPulse 2s ease-in-out infinite;
+        }
+
+        /* Corps du phoenix (code binaire) */
+        .phoenix-body {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 60px;
+            background: linear-gradient(180deg, #00D9FF, #FFD700);
+            clip-path: ellipse(50% 60% at 50% 50%);
+            filter: blur(1px);
+            animation: bodyGlow 1.5s ease-in-out infinite alternate;
+        }
+
+        /* Tête du phoenix */
+        .phoenix-head {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 30px;
+            background: radial-gradient(circle, #FFD700, #00D9FF);
+            border-radius: 50%;
+            animation: headBob 1s ease-in-out infinite;
+        }
+
+        /* Bec */
+        .phoenix-beak {
+            position: absolute;
+            top: 20px;
+            right: -10px;
+            width: 0;
+            height: 0;
+            border-left: 10px solid #FF6B35;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+        }
+
+        /* Ailes gauche */
+        .phoenix-wing-left {
+            position: absolute;
+            top: 30px;
+            left: -30px;
+            width: 50px;
+            height: 40px;
+            background: linear-gradient(135deg, #00D9FF 0%, transparent 70%);
+            clip-path: polygon(100% 0, 0 50%, 100% 100%);
+            animation: wingFlapLeft 0.8s ease-in-out infinite;
+            filter: drop-shadow(0 0 10px #00D9FF);
+        }
+
+        /* Ailes droite */
+        .phoenix-wing-right {
+            position: absolute;
+            top: 30px;
+            right: -30px;
+            width: 50px;
+            height: 40px;
+            background: linear-gradient(225deg, #FFD700 0%, transparent 70%);
+            clip-path: polygon(0 0, 100% 50%, 0 100%);
+            animation: wingFlapRight 0.8s ease-in-out infinite;
+            filter: drop-shadow(0 0 10px #FFD700);
+        }
+
+        /* Queue */
+        .phoenix-tail {
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 40px;
+            background: linear-gradient(180deg, #FFD700, transparent);
+            animation: tailSway 1.2s ease-in-out infinite;
+        }
+
+        /* Particules de code */
+        .code-particle {
+            position: absolute;
+            color: #00D9FF;
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            opacity: 0;
+            animation: particleRise 3s linear infinite;
+        }
+
+        /* Cercles de pouvoir */
+        .power-ring {
+            position: absolute;
+            border: 2px solid #00D9FF;
+            border-radius: 50%;
+            opacity: 0;
+            animation: ringExpand 2s ease-out infinite;
+        }
+
+        .power-ring:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+
+        .power-ring:nth-child(3) {
+            animation-delay: 1s;
+        }
+
+        /* Code binaire qui tourne */
+        .binary-orbit {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 150px;
+            height: 150px;
+            transform: translate(-50%, -50%);
+            animation: rotate 4s linear infinite;
+        }
+
+        .binary-digit {
+            position: absolute;
+            color: #C0C0C0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            text-shadow: 0 0 5px #00D9FF;
+        }
+
+        /* Texte de chargement */
+        .loading-text {
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #00D9FF;
+            font-size: 14px;
+            letter-spacing: 2px;
+            animation: textPulse 1.5s ease-in-out infinite;
+        }
+
+        /* Animations */
+        @keyframes phoenixPulse {
+            0%, 100% { transform: scale(1) translateY(0); }
+            50% { transform: scale(1.05) translateY(-5px); }
+        }
+
+        @keyframes bodyGlow {
+            from { box-shadow: 0 0 20px #00D9FF; }
+            to { box-shadow: 0 0 40px #FFD700; }
+        }
+
+        @keyframes headBob {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-3px); }
+        }
+
+        @keyframes wingFlapLeft {
+            0%, 100% { transform: rotate(-20deg); }
+            50% { transform: rotate(-35deg); }
+        }
+
+        @keyframes wingFlapRight {
+            0%, 100% { transform: rotate(20deg); }
+            50% { transform: rotate(35deg); }
+        }
+
+        @keyframes tailSway {
+            0%, 100% { transform: translateX(-50%) rotate(0deg); }
+            50% { transform: translateX(-50%) rotate(10deg); }
+        }
+
+        @keyframes particleRise {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 0;
+            }
+            20% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) scale(0.5);
+                opacity: 0;
+            }
+        }
+
+        @keyframes ringExpand {
+            0% {
+                width: 50px;
+                height: 50px;
+                opacity: 0.8;
+            }
+            100% {
+                width: 200px;
+                height: 200px;
+                opacity: 0;
+            }
+        }
+
+        @keyframes rotate {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        @keyframes textPulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .patronus-loader {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .phoenix {
+                width: 75px;
+                height: 90px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="patronus-loader">
+        <!-- Cercles de pouvoir -->
+        <div class="power-ring"></div>
+        <div class="power-ring"></div>
+        <div class="power-ring"></div>
+
+        <!-- Code binaire en orbite -->
+        <div class="binary-orbit" id="binaryOrbit"></div>
+
+        <!-- Phoenix central -->
+        <div class="phoenix">
+            <div class="phoenix-head">
+                <div class="phoenix-beak"></div>
+            </div>
+            <div class="phoenix-wing-left"></div>
+            <div class="phoenix-wing-right"></div>
+            <div class="phoenix-body"></div>
+            <div class="phoenix-tail"></div>
+        </div>
+
+        <!-- Texte de chargement -->
+        <div class="loading-text">CHARGEMENT</div>
+    </div>
+
+    <script>
+        // Génération dynamique des particules de code
+        function createCodeParticles() {
+            const loader = document.querySelector('.patronus-loader');
+            const codeSnippets = ['if', 'else', '{}', '()', '[]', 'fn', 'const', 'var', 'let', '&&', '||', '=>', 'def', 'class'];
+            
+            // Créer 8 particules
+            for (let i = 0; i < 8; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'code-particle';
+                particle.textContent = codeSnippets[Math.floor(Math.random() * codeSnippets.length)];
+                
+                // Position aléatoire autour du phoenix
+                const angle = (i / 8) * Math.PI * 2;
+                const radius = 60;
+                const x = Math.cos(angle) * radius;
+                const y = Math.sin(angle) * radius;
+                
+                particle.style.left = `calc(50% + ${x}px)`;
+                particle.style.top = `calc(50% + ${y}px)`;
+                particle.style.animationDelay = `${i * 0.3}s`;
+                
+                loader.appendChild(particle);
+            }
+        }
+
+        // Génération des chiffres binaires en orbite
+        function createBinaryOrbit() {
+            const orbit = document.getElementById('binaryOrbit');
+            const binaryString = '01001000010001010100110001001100';
+            
+            for (let i = 0; i < binaryString.length; i++) {
+                const digit = document.createElement('div');
+                digit.className = 'binary-digit';
+                digit.textContent = binaryString[i];
+                
+                const angle = (i / binaryString.length) * Math.PI * 2;
+                const x = Math.cos(angle) * 70;
+                const y = Math.sin(angle) * 70;
+                
+                digit.style.left = `calc(50% + ${x}px)`;
+                digit.style.top = `calc(50% + ${y}px)`;
+                digit.style.transform = 'translate(-50%, -50%)';
+                
+                orbit.appendChild(digit);
+            }
+        }
+
+        // Initialisation
+        document.addEventListener('DOMContentLoaded', () => {
+            createCodeParticles();
+            createBinaryOrbit();
+        });
+
+        // Effet de scintillement aléatoire
+        setInterval(() => {
+            const particles = document.querySelectorAll('.binary-digit');
+            const randomParticle = particles[Math.floor(Math.random() * particles.length)];
+            if (randomParticle) {
+                randomParticle.style.color = Math.random() > 0.5 ? '#FFD700' : '#00D9FF';
+            }
+        }, 200);
+    </script>
+</body>
+</html>
+

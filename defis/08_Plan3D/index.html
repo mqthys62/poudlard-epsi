@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan 3D - EPSI Arras</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            background: #1a1a2e;
+        }
+        #info {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: white;
+            background: rgba(0,0,0,0.7);
+            padding: 15px;
+            border-radius: 8px;
+            z-index: 100;
+            max-width: 250px;
+        }
+        #info h3 {
+            margin: 0 0 10px 0;
+            font-size: 16px;
+            color: #00d4ff;
+        }
+        #info p {
+            margin: 5px 0;
+            font-size: 12px;
+        }
+        .highlight {
+            color: #ff6b6b;
+            font-weight: bold;
+        }
+        #controls {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.8);
+            padding: 10px 20px;
+            border-radius: 8px;
+            color: white;
+            font-size: 12px;
+        }
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="info">
+        <h3>🏰 Plan 3D - EPSI Arras</h3>
+        <p>📍 1er Étage</p>
+        <p class="highlight">🔍 Chambre des secrets: myDiL</p>
+        <p>🖱️ Clic gauche: Rotation</p>
+        <p>🖱️ Molette: Zoom</p>
+    </div>
+    
+    <div id="controls">
+        Animation automatique activée | Espaces: <span id="roomCount">0</span>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <script>
+        // Configuration de la scène
+        let scene, camera, renderer, building;
+        let autoRotate = true;
+        const rooms = [];
+        
+        // Helpers placement propre
+        const GRID = 1; // unité grille
+        function snap(v){ return Math.round(v / GRID) * GRID; }
+        function rectOf(room){ return { x:room.mesh.position.x - room.mesh.geometry.parameters.width/2, z:room.mesh.position.z - room.mesh.geometry.parameters.depth/2, w:room.mesh.geometry.parameters.width, d:room.mesh.geometry.parameters.depth}; }
+        function intersects(a,b){ return !(a.x+a.w<=b.x || b.x+b.w<=a.x || a.z+a.d<=b.z || b.z+b.d<=a.z); }
+        function placeRoomSafe(x,z,w,d,name,isSecret=false){
+            // snap
+            x = snap(x); z = snap(z); w = snap(w); d = snap(d);
+            // éviter trop petites pièces
+            w = Math.max(4,w); d = Math.max(4,d);
+            // tentative de placement; si collision, décale le long du couloir (axe z)
+            let tryX = x, tryZ = z, guard=0;
+            const maxShift = 40; const step = 2;
+            while(guard<500){
+                const ghost = { x: tryX - w/2, z: tryZ - d/2, w, d };
+                let collision = false;
+                for(const r of rooms){ const rr = rectOf(r); if(intersects(ghost, rr)){ collision=true; break; } }
+                if(!collision){
+                    const r = createRoom(tryX, tryZ, w, d, name, isSecret); return r;
+                }
+                tryZ += step; // décale vers le bas
+                if(Math.abs(tryZ - z) > maxShift){ tryZ = z; tryX += step; }
+                guard++;
+            }
+            // fallback brut
+            return createRoom(x, z, w, d, name, isSecret);
+        }
+        
+        function init() {
+            // Scène
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x1a1a2e);
+            scene.fog = new THREE.Fog(0x1a1a2e, 50, 200);
+            
+            // Caméra
+            camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.set(40, 50, 40);
+            camera.lookAt(0, 0, 0);
+            
+            // Renderer
+            renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.shadowMap.enabled = true;
+            renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+            document.body.appendChild(renderer.domElement);
+            
+            // Lumières
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+            scene.add(ambientLight);
+            
+            const dirLight1 = new THREE.DirectionalLight(0xffffff, 0.7);
+            dirLight1.position.set(30, 40, 30);
+            dirLight1.castShadow = true;
+            dirLight1.shadow.mapSize.width = 1024;
+            dirLight1.shadow.mapSize.height = 1024;
+            scene.add(dirLight1);
+            
+            const dirLight2 = new THREE.DirectionalLight(0x4488ff, 0.3);
+            dirLight2.position.set(-20, 30, -20);
+            scene.add(dirLight2);
+            
+            // Groupe principal
+            building = new THREE.Group();
+            scene.add(building);
+            
+            // Création du bâtiment
+            createBuilding();
+            
+            // Grille de sol
+            const gridHelper = new THREE.GridHelper(120, 60, 0x00d4ff, 0x2a2a4e);
+            gridHelper.position.y = -0.1;
+            scene.add(gridHelper);
+            
+            // Gestion des événements
+            let isDragging = false;
+            let previousMousePosition = { x: 0, y: 0 };
+            
+            renderer.domElement.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                autoRotate = false;
+            });
+            
+            renderer.domElement.addEventListener('mousemove', (e) => {
+                if (isDragging) {
+                    const deltaX = e.clientX - previousMousePosition.x;
+                    const deltaY = e.clientY - previousMousePosition.y;
+                    
+                    building.rotation.y += deltaX * 0.01;
+                    building.rotation.x += deltaY * 0.01;
+                    building.rotation.x = Math.max(-Math.PI / 3, Math.min(Math.PI / 3, building.rotation.x));
+                }
+                previousMousePosition = { x: e.clientX, y: e.clientY };
+            });
+            
+            renderer.domElement.addEventListener('mouseup', () => {
+                isDragging = false;
+            });
+            
+            renderer.domElement.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                camera.position.z += e.deltaY * 0.05;
+                camera.position.z = Math.max(20, Math.min(100, camera.position.z));
+            });
+            
+            window.addEventListener('resize', onWindowResize);
+            
+            document.getElementById('roomCount').textContent = rooms.length;
+        }
+        
+        function createWall(x, y, z, width, height, depth, color = 0x34495e) {
+            const geometry = new THREE.BoxGeometry(width, height, depth);
+            const material = new THREE.MeshPhongMaterial({ 
+                color: color,
+                shininess: 30
+            });
+            const wall = new THREE.Mesh(geometry, material);
+            wall.position.set(x, y, z);
+            wall.castShadow = true;
+            wall.receiveShadow = true;
+            return wall;
+        }
+        
+        function createRoom(x, z, width, depth, name, isSecret = false) {
+            const height = 0.1;
+            const color = isSecret ? 0xff6b6b : (Math.random() * 0.3 + 0.3) * 0xffffff;
+            
+            const geometry = new THREE.BoxGeometry(width, height, depth);
+            const material = new THREE.MeshPhongMaterial({ 
+                color: color,
+                transparent: true,
+                opacity: isSecret ? 0.9 : 0.6,
+                emissive: isSecret ? 0xff0000 : 0x000000,
+                emissiveIntensity: isSecret ? 0.3 : 0
+            });
+            
+            const floor = new THREE.Mesh(geometry, material);
+            floor.position.set(x, height / 2, z);
+            floor.receiveShadow = true;
+            
+            rooms.push({ mesh: floor, name: name, isSecret: isSecret });
+            building.add(floor);
+            return floor;
+        }
+        
+        function createDoor(x, y, z, rotation = 0) {
+            const doorFrame = new THREE.Group();
+            
+            const frameGeometry = new THREE.BoxGeometry(1.2, 2.5, 0.2);
+            const frameMaterial = new THREE.MeshPhongMaterial({ color: 0x8b4513 });
+            const frame = new THREE.Mesh(frameGeometry, frameMaterial);
+            
+            const doorGeometry = new THREE.BoxGeometry(1, 2.2, 0.1);
+            const doorMaterial = new THREE.MeshPhongMaterial({ color: 0xa0522d });
+            const door = new THREE.Mesh(doorGeometry, doorMaterial);
+            door.position.y = 0;
+            
+            doorFrame.add(frame);
+            doorFrame.add(door);
+            doorFrame.position.set(x, y, z);
+            doorFrame.rotation.y = rotation;
+            
+            return doorFrame;
+        }
+        
+        function createBuilding() {
+            const wallHeight = 3;
+            const wallThickness = 0.3;
+            
+            // Sols des pièces principales (cohérents, non chevauchants)
+            // Gauche
+            placeRoomSafe(-16, -16, 8, 8, "Classe");
+            placeRoomSafe(-16,  -6, 8, 6, "Bureau");
+            placeRoomSafe(-16,   5, 8, 8, "Salle Informatique");
+            placeRoomSafe(-16,  15, 8, 8, "Classe");
+            placeRoomSafe( -7,  15, 6, 8, "Bureau");
+            
+            // Centre
+            placeRoomSafe( -4, -15, 6, 8, "Bureau");
+            placeRoomSafe( -4,  -5, 6, 6, "Salle");
+            placeRoomSafe( -4,   5, 6, 8, "Bureau");
+            placeRoomSafe(  4,   6, 6, 8, "Réfectoire / Pause");
+            placeRoomSafe(  9,  10, 3, 3, "Serveur");
+            
+            // Droite
+            placeRoomSafe(  8, -15, 8, 8, "Classe");
+            placeRoomSafe(  8,  -5, 8, 6, "Classe");
+            placeRoomSafe(  8,   5, 8, 8, "Classe");
+            placeRoomSafe( 15,   5, 8, 8, "Salle de conférence");
+            placeRoomSafe( 15,  15, 8, 8, "Salle des profs");
+            
+            // Chambre des secrets - myDiL
+            placeRoomSafe(  4,  -5, 5, 5, "myDiL - Chambre des Secrets", true);
+            
+            // Murs extérieurs
+            building.add(createWall(-20, wallHeight/2, 0, wallThickness, wallHeight, 50));
+            building.add(createWall( 20, wallHeight/2, 0, wallThickness, wallHeight, 50));
+            building.add(createWall(  0, wallHeight/2, -25, 40, wallHeight, wallThickness));
+            building.add(createWall(  0, wallHeight/2,  25, 40, wallHeight, wallThickness));
+            
+            // Éléments couloir (quelques segments pour structure visuelle)
+            building.add(createWall(-10, wallHeight/2, 0, wallThickness, wallHeight, 40));
+            building.add(createWall(  0, wallHeight/2,-10, 20, wallHeight, wallThickness));
+            building.add(createWall(  0, wallHeight/2, 10, 20, wallHeight, wallThickness));
+            building.add(createWall( 10, wallHeight/2,  5, wallThickness, wallHeight, 20));
+            
+            // Escaliers
+            const stairGeometry = new THREE.BoxGeometry(3, 0.5, 3);
+            const stairMaterial = new THREE.MeshPhongMaterial({ color: 0x7f8c8d });
+            const stairs1 = new THREE.Mesh(stairGeometry, stairMaterial); stairs1.position.set(0, 0.25, -20); building.add(stairs1);
+            const stairs2 = new THREE.Mesh(stairGeometry, stairMaterial); stairs2.position.set(12, 0.25, 0);   building.add(stairs2);
+        }
+        
+        function animate() {
+            requestAnimationFrame(animate);
+            
+            if (autoRotate) {
+                building.rotation.y += 0.003;
+            }
+            
+            rooms.forEach(room => {
+                if (room.isSecret) {
+                    const pulse = Math.sin(Date.now() * 0.003) * 0.2 + 0.8;
+                    room.mesh.material.emissiveIntensity = pulse * 0.4;
+                }
+            });
+            
+            renderer.render(scene, camera);
+        }
+        
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+        
+        init();
+        animate();
+    </script>
+</body>
+</html>

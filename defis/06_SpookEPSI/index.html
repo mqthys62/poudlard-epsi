@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EPSI Poudlard - L'école d'ingénierie informatique magique. Formations en alternance et initiale du BTS au Bac+5.">
+    <meta name="keywords" content="EPSI, Poudlard, école informatique, ingénierie, formation, alternance, BTS, Bac+5">
+    <title>EPSI Poudlard - L'École d'Ingénierie Informatique Magique</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="./styles.css">
+    
+    <!-- Icons (Lucide CDN) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <!-- ====================================
+         HEADER / NAVIGATION
+         ==================================== -->
+    <header class="header">
+        <div class="container">
+            <div class="header-container">
+                <a href="#" class="logo">
+                    <div class="logo-icon">⚡</div>
+                    <span>EPSI Poudlard</span>
+                </a>
+
+                <nav class="nav-menu" id="navMenu">
+                    <a href="#ecole" class="nav-link">L'École</a>
+                    <a href="#formations" class="nav-link">Formations</a>
+                    <a href="#campus" class="nav-link">Campus</a>
+                    <a href="#admission" class="nav-link">Admission</a>
+                    <a href="#vie-etudiante" class="nav-link">Vie Étudiante</a>
+                    <a href="#contact" class="nav-link nav-cta">Candidature</a>
+                </nav>
+
+                <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ====================================
+         HERO SECTION
+         ==================================== -->
+    <section class="hero" id="accueil">
+        <div class="container">
+            <div class="hero-content">
+                <p class="hero-subtitle">Bienvenue à l'École de Sorcellerie Numérique</p>
+                <h1 class="hero-title">EPSI Poudlard</h1>
+                <p class="hero-description">
+                    L'école d'ingénierie informatique où la magie rencontre la technologie. 
+                    Forme-toi aux métiers du numérique dans un environnement magique, du BTS au Bac+5.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#formations" class="btn btn-primary">Découvrir nos formations</a>
+                    <a href="#contact" class="btn btn-secondary">Prendre rendez-vous</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================
+         L'ÉCOLE
+         ==================================== -->
+    <section class="section" id="ecole">
+        <div class="container">
+            <p class="section-subtitle">Notre Histoire</p>
+            <h2 class="section-title">L'École d'Ingénierie Informatique Magique</h2>
+            
+            <div class="grid grid-2">
+                <div class="card reveal">
+                    <div class="card-icon">📜</div>
+                    <h3 class="card-title">Notre Histoire</h3>
+                    <p class="card-description">
+                        Créée en 993 par les Fondateurs de Poudlard, EPSI Poudlard est la première école à avoir 
+                        fusionné les arts magiques ancestraux avec les technologies numériques modernes. 
+                        Depuis plus de mille ans, nous formons les meilleurs sorciers-développeurs de l'univers magique.
+                    </p>
+                </div>
+
+                <div class="card reveal">
+                    <div class="card-icon">🎓</div>
+                    <h3 class="card-title">Notre Pédagogie</h3>
+                    <p class="card-description">
+                        Nous combinons l'enseignement théorique en sortilèges de programmation avec la pratique 
+                        en entreprises magiques. Notre méthode unique "Apprendre par la Magie" garantit 
+                        une insertion professionnelle à 98% dès la sortie de l'école.
+                    </p>
+                </div>
+
+                <div class="card reveal">
+                    <div class="card-icon">🏆</div>
+                    <h3 class="card-title">Nos Accréditations</h3>
+                    <p class="card-description">
+                        Certifiée par le Ministère de la Magie, reconnue par le Conseil International des Sorciers,
+                        et accréditée RNCP niveau 7. Nos diplômes sont reconnus dans le monde entier, 
+                        du monde moldu au monde magique.
+                    </p>
+                </div>
+
+                <div class="card reveal">
+                    <div class="card-icon">🌍</div>
+                    <h3 class="card-title">Notre Réseau</h3>
+                    <p class="card-description">
+                        10 campus à travers la France magique, plus de 15 000 anciens élèves devenus 
+                        sorciers-développeurs, et des partenariats avec les plus grandes entreprises 
+                        du monde magique (Gringotts Tech, Nimbus Digital, Patronus Cloud...).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================
+         CAMPUS
+         ==================================== -->
+    <section class="section campus-section" id="campus">
+        <div class="container">
+            <p class="section-subtitle">Notre Campus</p>
+            <h2 class="section-title">Le Campus de Poudlard</h2>
+
+            <div class="grid grid-3">
+                <div class="campus-card reveal">
+                    <h3>🏰 Les Équipements</h3>
+                    <ul style="margin-top: 1.5rem; color: var(--text-light); line-height: 2;">
+                        <li>✨ Salles de potions informatiques équipées de chaudrons-serveurs</li>
+                        <li>✨ Laboratoires de réseaux magiques avec balais volants connectés</li>
+                        <li>✨ Salle de conférence des Quatre Fondateurs (200 places)</li>
+                        <li>✨ Bibliothèque numérique avec grimoires électroniques</li>
+                        <li>✨ Salle de Défense contre le Dark Web</li>
+                        <li>✨ Espace détente : Quidditch virtuel, salle de jeu Echecs Sorciers 3D</li>
+                    </ul>
+                </div>
+
+                <div class="campus-card reveal">
+                    <h3>🎯 La Vie au Campus</h3>
+                    <ul style="margin-top: 1.5rem; color: var(--text-light); line-height: 2;">
+                        <li>📚 Accès 24/7 à la Salle sur Demande (coworking magique)</li>
+                        <li>🧙 Professeurs experts en Sortilèges de Code</li>
+                        <li>🏅 Compétitions de Hackathon des Maisons</li>
+                        <li>🦉 Service Hedwige Express (livraison de pizzas par hiboux)</li>
+                        <li>⚡ Système de transport par Poudre de Cheminette (métro magique)</li>
+                        <li>🌟 Events réguliers : Bal de Noël du Code, Tournoi des Trois Sorciers Dev</li>
+                    </ul>
+                </div>
+
+                <div class="campus-card reveal">
+                    <h3>🤝 Partenaires & Réseau</h3>
+                    <ul style="margin-top: 1.5rem; color: var(--text-light); line-height: 2;">
+                        <li>🏛️ Ministère de la Magie Numérique</li>
+                        <li>🏦 Gringotts FinTech</li>
+                        <li>🧹 Nimbus Digital Solutions</li>
+                        <li>🔮 Ollivander's AI Wands</li>
+                        <li>📰 La Gazette du Sorcier Tech</li>
+                        <li>🎭 Plus de 500 entreprises partenaires dans le monde magique</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top: 4rem; text-align: center;">
+                <h3 style="color: var(--gryffindor-gold); font-size: 2rem; margin-bottom: 2rem;">📍 Localisation</h3>
+                <p style="font-size: 1.2rem; margin-bottom: 1rem;">
+                    <strong>Adresse :</strong> Château de Poudlard, Grandes Forêts d'Écosse Magique, 99999 Poudlard
+                </p>
+                <p style="font-size: 1.2rem; margin-bottom: 1rem;">
+                    <strong>Contact :</strong> hibou@epsi-poudlard.magic
+                </p>
+                <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+                    <strong>Cheminette :</strong> "EPSI Poudlard" (réseau Poudre Verte)
+                </p>
+                <p style="font-size: 1rem; color: var(--text-light);">
+                    🚂 Accessible via le Poudlard Express - Quai 9¾, Gare de King's Cross<br>
+                    🧹 Parking à balais sécurisé disponible<br>
+                    🦉 Service de hiboux-coursiers toute la journée
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================
+         FORMATIONS
+         ==================================== -->
+    <section class="section formations-section" id="formations">
+        <div class="container">
+            <p class="section-subtitle">Nos Formations</p>
+            <h2 class="section-title">De l'Apprenti Sorcier à l'Expert Mage</h2>
+
+            <div class="grid grid-2">
+                <div class="formation-card reveal">
+                    <h3 class="formation-title">🪄 BTS SIO - Services Informatiques aux Organisations Magiques</h3>
+                    <div class="formation-details">
+                        <div class="formation-detail">
+                            <span class="formation-detail-icon">⏱️</span>
+                            <span>2 ans</span>
+                        </div>
+                        <div class="formation-detail">
+                            <span class="formation-detail-icon">🎓</span>
+                            <span>Niveau 5 (Bac+2)</span>
+                        </div>
+                        <div class="formation-detail">
+                            <span class="formation-detail-icon">💼</span>
+                            <span>Alternance</span>
+                        </div>
+                    </div>
+                    <p class="card-description">
+                        Formation initiale aux sortilèges de base du numérique. Options SISR (Sortilèges Informatiques et Sorts Réseaux) 
+                        et SLAM (Sortilèges Logiciels et Applications Magiques). Idéal pour débuter ta carrière de sorcier-développeur.
+                    </p>
+                    <a href="#" class="btn btn-secondary mt-lg">En savoir plus</a>
+                </div>
+
+                <div class="formation-card reveal">
+                    <h3 class="formation-title">⚡ Bachelor Développeur Full-Stack Magique</h3>
+                    <div class="formation-details">
+                        <div class="formation-detail">
+                            <span class="formation-detail-icon">⏱️</span>
+                            <span>3 ans (ou 1 an après Bac+2)</span>
+                        </div>
+                        <div class="formation-detail">
+                            <span class="formation-detail-icon">🎓</span>
+                            <span>Niveau 6 (Bac+3)</span>
+                        </div>
+                        <div class="formation-detail">
+                            <span class="formation-detail-icon">💼</span>
+                            <span>Alternance / Initial</span>
+                        </div>
+                    </div>
+                    <p class="card-description">
+                        Maîtrise des enchantements front-end (React.js, Vue.js magiques) et back-end (Node.js, Python des Serpentards). 
+                        Spécialisation en DevOps magique avec Docker-Patronus et Kubernetes-Expelliarmus.
+                    </p>
+                    <a href="#" class="btn btn-secondary mt-lg">En savoir plus</a>
+                </div>
+
+                <div class="formation-card reveal">
+                    <h3 class="formation-title">🔮 Mastère Expert en Intelligence Artificielle Magique</h3>
+                    <div class="formation-details">
+                        <div class="formation-detail">
+                            <span class="formation-detail-icon">⏱️</span>
+                            <span>2 ans</span>
+                        </div>
+                        <div class="formation-detail">
+                            <span class="formation-detail-icon">🎓</span>
+                            <span>Niveau 7 (Bac+5)</span>
+                        </div>
+                        <div class="formation-detail">
+                            <span class="formation-detail-icon">💼</span>
+                            <span>Alternance</span>
+                        </div>
+                    </div>
+                    <p class="card-description">
+                        Formation d'élite en Deep Learning divinatoire, Machine Learning prédictif et NLP (Natural Language of Potions). 
+                        Travaux pratiques sur la création de Patronus numériques intelligents et sorts de reconnaissance d'images.
+                    </p>
+                    <a href="#" class="btn btn-secondary mt-lg">En savoir plus</a>
+                </div>
+
+                <div class="formation-card reveal">
+                    <h3 class="formation-title">🛡️ Mastère Expert en Cybersécurité & Défense Magique</h3>
+                    <div class="formation-details">
+                        <div class="formation-detail">
+                            <span class="formation-detail-icon">⏱️</span>
+                            <span>2 ans</span>
+                        </div>
+                        <div class="formation-detail">
+                            <span class="formation-detail-icon">🎓</span>
+                            <span>Niveau 7 (Bac+5)</span>
+                        </div>
+                        <div class="formation-detail">
+                            <span class="formation-detail-icon">💼</span>
+                            <span>Alternance</span>
+                        </div>
+                    </div>
+                    <p class="card-description">
+                        Défense contre les Forces du Mal Numérique. Apprentissage du Protego Maxima (pare-feu avancé), 
+                        détection d'intrusions par sortilège Homenum Revelio, et cryptographie avec le Sort de Fidelitas.
+                    </p>
+                    <a href="#" class="btn btn-secondary mt-lg">En savoir plus</a>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 4rem;">
+                <h3 style="color: var(--gryffindor-gold); font-size: 1.75rem; margin-bottom: 2rem;">
+                    🎯 Spécialisations disponibles
+                </h3>
+                <div class="flex" style="flex-wrap: wrap; justify-content: center; gap: 1rem;">
+                    <span class="badge">Cloud Magique ☁️</span>
+                    <span class="badge">DevOps Enchanteur 🔄</span>
+                    <span class="badge">Data Science Divination 🔮</span>
+                    <span class="badge">Blockchain Gobelin 🏦</span>
+                    <span class="badge">Mobile Sorcier 📱</span>
+                    <span class="badge">IoT Magique 🌐</span>
+                    <span class="badge">Gaming Quidditch 🎮</span>
+                    <span class="badge">UX/UI Ensorceleur 🎨</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================
+         VIE ÉTUDIANTE
+         ==================================== -->
+    <section class="section" id="vie-etudiante" style="background: var(--section-bg);">
+        <div class="container">
+            <p class="section-subtitle">Rejoins la Communauté</p>
+            <h2 class="section-title">Vie Étudiante Magique</h2>
+
+            <div class="grid grid-3">
+                <div class="card reveal">
+                    <div class="card-icon">🏅</div>
+                    <h3 class="card-title">BDE - Bureau des Élèves Sorciers</h3>
+                    <p class="card-description">
+                        Association gérée par les apprentis depuis 1000 ans. Organisation du Bal de Noël, 
+                        Semaine d'Intégration à Pré-au-Lard, Tournois de Quidditch inter-promotions, 
+                        et soirées à thème (Halloween Hackathon, Fête de Fin d'Année au Lac Noir).
+                    </p>
+                </div>
+
+                <div class="card reveal">
+                    <div class="card-icon">📰</div>
+                    <h3 class="card-title">La Gazette du Codeur</h3>
+                    <p class="card-description">
+                        Journal étudiant magique en partenariat avec la Gazette du Sorcier Tech. 
+                        Publication mensuelle d'articles sur les nouvelles technologies, interviews de diplômés, 
+                        et couverture des événements du campus (LAN Party, Conférences, Remise des Diplômes).
+                    </p>
+                </div>
+
+                <div class="card reveal">
+                    <div class="card-icon">🎮</div>
+                    <h3 class="card-title">EPSI Game Magique</h3>
+                    <p class="card-description">
+                        Association spécialisée dans les métiers du Jeu Vidéo Magique. 
+                        Pôles développement (Unity avec sortilèges, Unreal Engine enchanté) et événementiel 
+                        (organisation du Festival du Jeu Vidéo Sorcier annuel).
+                    </p>
+                </div>
+
+                <div class="card reveal">
+                    <div class="card-icon">🌐</div>
+                    <h3 class="card-title">WebSI - Les Alchimistes du Web</h3>
+                    <p class="card-description">
+                        Initiation aux technologies web modernes (React, Next.js, Tailwind CSS magiques). 
+                        Formation sur CMS enchantés (WordPress Patronus, Prestashop Gringotts), 
+                        et réalisation de sites pour associations et PME magiques.
+                    </p>
+                </div>
+
+                <div class="card reveal">
+                    <div class="card-icon">🏆</div>
+                    <h3 class="card-title">Compétitions & Hackathons</h3>
+                    <p class="card-description">
+                        Participe au Tournoi des Trois Sorciers Dev, Hackathon des Horcruxes, 
+                        Capture the Flag du Ministère, et représente EPSI Poudlard lors des compétitions 
+                        nationales et internationales (Magic Tech Challenge, European Wizard Coding Contest).
+                    </p>
+                </div>
+
+                <div class="card reveal">
+                    <div class="card-icon">✈️</div>
+                    <h3 class="card-title">Expériences Internationales</h3>
+                    <p class="card-description">
+                        Échanges avec nos écoles partenaires : Institut Durmstrang (Suède), 
+                        Académie Beauxbâtons (France magique), Ilvermorny (USA). 
+                        Semestres à l'étranger et stages en entreprises internationales magiques.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================
+         ADMISSION
+         ==================================== -->
+    <section class="section" id="admission">
+        <div class="container">
+            <p class="section-subtitle">Rejoins-nous</p>
+            <h2 class="section-title">Admission à EPSI Poudlard</h2>
+
+            <div class="grid grid-2">
+                <div class="card reveal">
+                    <h3 class="card-title" style="color: var(--gryffindor-gold);">📋 Parcoursup</h3>
+                    <p class="card-description">
+                        Depuis janvier 2021, inscris-toi directement au BTS SIO sur Parcoursup. 
+                        Le Choixpeau Magique numérique t'orientera vers la formation qui te correspond le mieux.
+                    </p>
+                    <a href="#" class="btn btn-primary mt-lg">S'inscrire sur Parcoursup</a>
+                </div>
+
+                <div class="card reveal">
+                    <h3 class="card-title" style="color: var(--gryffindor-gold);">🎯 Sessions d'Admission</h3>
+                    <p class="card-description">
+                        Postule dans l'espace Candidature pour passer les tests de magie numérique et l'entretien de motivation. 
+                        Épreuves : Sortilège de Logique (algorithmique), Test de Patronus (personnalité), et Entretien avec un professeur.
+                    </p>
+                    <a href="#" class="btn btn-primary mt-lg">Postuler maintenant</a>
+                </div>
+
+                <div class="card reveal">
+                    <h3 class="card-title" style="color: var(--gryffindor-gold);">🗓️ Portes Ouvertes</h3>
+                    <p class="card-description">
+                        Visite le château, rencontre les professeurs et les elfes de maison du service IT, 
+                        découvre les projets étudiants (Patronus Loader, Hedwige Mail App, CNN Harry Potter), 
+                        et assiste à une démonstration de sortilèges de code en temps réel.
+                    </p>
+                    <a href="#" class="btn btn-secondary mt-lg">Voir les dates JPO</a>
+                </div>
+
+                <div class="card reveal">
+                    <h3 class="card-title" style="color: var(--gryffindor-gold);">💼 Job Dating Magique</h3>
+                    <p class="card-description">
+                        Rencontre nos entreprises partenaires lors des Job Dating semestriels. 
+                        Présente ton CV-Parchemin, passe des entretiens avec des recruteurs magiques, 
+                        et trouve ton alternance ou ton stage en quelques heures !
+                    </p>
+                    <a href="#" class="btn btn-secondary mt-lg">Prochaines dates</a>
+                </div>
+            </div>
+
+            <div style="margin-top: 4rem; padding: 3rem; background: linear-gradient(135deg, var(--ravenclaw-blue), var(--gryffindor-red)); border-radius: 16px; text-align: center;">
+                <h3 style="font-size: 2rem; margin-bottom: 1.5rem;">📩 Besoin d'aide pour ton projet ?</h3>
+                <p style="font-size: 1.2rem; margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                    Prends rendez-vous avec un conseiller en orientation magique pour discuter de ton projet de formation, 
+                    recevoir des conseils personnalisés, et découvrir les débouchés professionnels du numérique magique.
+                </p>
+                <a href="#contact" class="btn btn-primary" style="font-size: 1.1rem; padding: 16px 40px;">
+                    Prendre Rendez-vous 🧙‍♂️
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================
+         TÉMOIGNAGES
+         ==================================== -->
+    <section class="section" style="background: var(--section-bg);">
+        <div class="container">
+            <p class="section-subtitle">Ils ont vécu l'expérience</p>
+            <h2 class="section-title">Témoignages d'Anciens Élèves</h2>
+
+            <div class="grid grid-3">
+                <div class="card reveal">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                        <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--gryffindor-red), var(--gryffindor-gold)); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                            ⚡
+                        </div>
+                        <div>
+                            <h4 style="color: var(--gryffindor-gold); margin: 0;">Harry Potter</h4>
+                            <p style="font-size: 0.9rem; color: var(--text-light); margin: 0;">Promo 2024 - Lead Dev chez Patronus Cloud</p>
+                        </div>
+                    </div>
+                    <p class="card-description">
+                        "EPSI Poudlard m'a appris à combiner magie et technologie. Aujourd'hui, je développe des IA 
+                        capables de générer des Patronus numériques pour protéger les serveurs. Une aventure incroyable !"
+                    </p>
+                </div>
+
+                <div class="card reveal">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                        <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--ravenclaw-blue), var(--ravenclaw-bronze)); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                            📚
+                        </div>
+                        <div>
+                            <h4 style="color: var(--gryffindor-gold); margin: 0;">Hermione Granger</h4>
+                            <p style="font-size: 0.9rem; color: var(--text-light); margin: 0;">Promo 2024 - Data Scientist chez Gringotts AI</p>
+                        </div>
+                    </div>
+                    <p class="card-description">
+                        "Les cours de Data Science Divination m'ont permis de prédire les tendances financières magiques 
+                        avec une précision de 99.7%. Les professeurs sont des experts passionnés !"
+                    </p>
+                </div>
+
+                <div class="card reveal">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                        <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--slytherin-green), var(--slytherin-silver)); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                            🐍
+                        </div>
+                        <div>
+                            <h4 style="color: var(--gryffindor-gold); margin: 0;">Drago Malefoy</h4>
+                            <p style="font-size: 0.9rem; color: var(--text-light); margin: 0;">Promo 2023 - CEO chez Serpentard Solutions</p>
+                        </div>
+                    </div>
+                    <p class="card-description">
+                        "L'alternance m'a permis de créer ma startup dès la fin de mes études. 
+                        Le réseau d'anciens est incroyable, j'ai levé 5M€ grâce aux contacts EPSI Poudlard !"
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================
+         CONTACT / CTA FINAL
+         ==================================== -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+                <p class="section-subtitle">Prêt à rejoindre l'aventure ?</p>
+                <h2 class="section-title">Deviens un Sorcier du Numérique</h2>
+                <p style="font-size: 1.25rem; margin-bottom: 3rem; color: var(--text-light);">
+                    Rejoins EPSI Poudlard et transforme ta passion pour la technologie en carrière magique. 
+                    Des centaines d'entreprises attendent ton talent.
+                </p>
+
+                <div class="grid grid-2" style="max-width: 700px; margin: 0 auto 3rem;">
+                    <div class="card">
+                        <h4 style="color: var(--gryffindor-gold); margin-bottom: 1rem;">📧 Contact</h4>
+                        <p>hibou@epsi-poudlard.magic</p>
+                        <p>Cheminette: "EPSI Poudlard"</p>
+                    </div>
+                    <div class="card">
+                        <h4 style="color: var(--gryffindor-gold); margin-bottom: 1rem;">📍 Adresse</h4>
+                        <p>Château de Poudlard</p>
+                        <p>99999 Forêts d'Écosse Magique</p>
+                    </div>
+                </div>
+
+                <div class="hero-buttons" style="justify-content: center;">
+                    <a href="#" class="btn btn-primary glow-pulse" style="font-size: 1.1rem; padding: 18px 48px;">
+                        Candidater Maintenant ⚡
+                    </a>
+                    <a href="#" class="btn btn-secondary" style="font-size: 1.1rem; padding: 18px 48px;">
+                        Télécharger la Brochure 📜
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================
+         FOOTER
+         ==================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>EPSI Poudlard</h3>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-light);">
+                        L'école d'ingénierie informatique magique. 
+                        Formations du BTS au Bac+5 en alternance et initial.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon" aria-label="Facebook">📘</a>
+                        <a href="#" class="social-icon" aria-label="Twitter">🐦</a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn">💼</a>
+                        <a href="#" class="social-icon" aria-label="Instagram">📷</a>
+                        <a href="#" class="social-icon" aria-label="YouTube">📹</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>L'École</h3>
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">🏰 Notre Histoire</a>
+                        <a href="#" class="footer-link">🎓 Notre Pédagogie</a>
+                        <a href="#" class="footer-link">🏆 Nos Labels</a>
+                        <a href="#" class="footer-link">🌍 Nos Campus</a>
+                        <a href="#" class="footer-link">📰 Actualités</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Formations</h3>
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">🪄 BTS SIO</a>
+                        <a href="#" class="footer-link">⚡ Bachelor Full-Stack</a>
+                        <a href="#" class="footer-link">🔮 Mastère IA</a>
+                        <a href="#" class="footer-link">🛡️ Mastère Cybersécurité</a>
+                        <a href="#" class="footer-link">📊 Toutes les formations</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Admission</h3>
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">📋 Parcoursup</a>
+                        <a href="#" class="footer-link">🎯 Candidature</a>
+                        <a href="#" class="footer-link">🗓️ Portes Ouvertes</a>
+                        <a href="#" class="footer-link">💼 Job Dating</a>
+                        <a href="#" class="footer-link">💰 Tarifs & Financement</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 EPSI Poudlard - Tous droits réservés</p>
+                <p style="margin-top: 0.5rem;">
+                    <a href="#" style="color: var(--gryffindor-gold); margin: 0 1rem;">Mentions Légales</a>
+                    <a href="#" style="color: var(--gryffindor-gold); margin: 0 1rem;">Politique de Confidentialité</a>
+                    <a href="#" style="color: var(--gryffindor-gold); margin: 0 1rem;">CGV</a>
+                </p>
+                <p style="margin-top: 1rem; font-family: var(--font-magic); color: var(--gryffindor-gold);">
+                    ✨ "Alohomora Digital" - Ouvre toutes les portes du numérique ✨
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ====================================
+         SCRIPTS
+         ==================================== -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        const body = document.body;
+
+        menuToggle.addEventListener('click', () => {
+            const isActive = navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+            
+            // Prevent body scroll when menu is open
+            if (isActive) {
+                body.classList.add('menu-open');
+            } else {
+                body.classList.remove('menu-open');
+            }
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                menuToggle.classList.remove('active');
+                body.classList.remove('menu-open');
+            });
+        });
+
+        // Scroll Reveal Animation
+        const reveals = document.querySelectorAll('.reveal');
+
+        const revealOnScroll = () => {
+            reveals.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight * 0.85) {
+                    element.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // Smooth Scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header background on scroll
+        const header = document.querySelector('.header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(28, 28, 28, 0.98)';
+                header.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.5)';
+            } else {
+                header.style.background = 'rgba(28, 28, 28, 0.95)';
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
+            }
+        });
+
+        // Sparkle effect on buttons (bonus animation)
+        const createSparkle = (x, y) => {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.position = 'fixed';
+            sparkle.style.left = x + 'px';
+            sparkle.style.top = y + 'px';
+            sparkle.style.width = '8px';
+            sparkle.style.height = '8px';
+            sparkle.style.background = 'var(--gryffindor-gold)';
+            sparkle.style.borderRadius = '50%';
+            sparkle.style.pointerEvents = 'none';
+            sparkle.style.zIndex = '9999';
+            document.body.appendChild(sparkle);
+            
+            setTimeout(() => sparkle.remove(), 1500);
+        };
+
+        document.querySelectorAll('.btn-primary').forEach(btn => {
+            btn.addEventListener('mouseenter', (e) => {
+                const rect = e.target.getBoundingClientRect();
+                for (let i = 0; i < 5; i++) {
+                    setTimeout(() => {
+                        createSparkle(
+                            rect.left + Math.random() * rect.width,
+                            rect.top + Math.random() * rect.height
+                        );
+                    }, i * 100);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

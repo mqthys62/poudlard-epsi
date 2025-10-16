@@ -1,0 +1,390 @@
+/**
+ * PatronusLoader Styles
+ * Animation du Phoenix Patronus EPSI
+ * Défi #9 - Workshop Poudlard RP 2025
+ */
+
+/* Container principal */
+.patronus-loader {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  --color-primary: #00D9FF;
+  --color-secondary: #FFD700;
+  --color-accent: #C0C0C0;
+}
+
+/* Phoenix central */
+.patronus-loader .phoenix {
+  position: relative;
+  animation: phoenixPulse 2s ease-in-out infinite;
+}
+
+/* Corps du phoenix */
+.patronus-loader .phoenix-body {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  height: 50%;
+  clip-path: ellipse(50% 60% at 50% 50%);
+  filter: blur(1px);
+  animation: bodyGlow 1.5s ease-in-out infinite alternate;
+}
+
+/* Tête */
+.patronus-loader .phoenix-head {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;
+  height: 25%;
+  border-radius: 50%;
+  animation: headBob 1s ease-in-out infinite;
+}
+
+/* Bec */
+.patronus-loader .phoenix-beak {
+  position: absolute;
+  top: 50%;
+  right: -30%;
+  width: 0;
+  height: 0;
+  border-left: 15px solid #FF6B35;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  transform: translateY(-50%);
+}
+
+/* Aile gauche */
+.patronus-loader .phoenix-wing-left {
+  position: absolute;
+  top: 25%;
+  left: -30%;
+  width: 50%;
+  height: 33%;
+  clip-path: polygon(100% 0, 0 50%, 100% 100%);
+  animation: wingFlapLeft 0.8s ease-in-out infinite;
+}
+
+/* Aile droite */
+.patronus-loader .phoenix-wing-right {
+  position: absolute;
+  top: 25%;
+  right: -30%;
+  width: 50%;
+  height: 33%;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+  animation: wingFlapRight 0.8s ease-in-out infinite;
+}
+
+/* Queue */
+.patronus-loader .phoenix-tail {
+  position: absolute;
+  bottom: -17%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 33%;
+  animation: tailSway 1.2s ease-in-out infinite;
+}
+
+/* Particules de code */
+.patronus-loader .code-particle {
+  position: absolute;
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  opacity: 0;
+  animation: particleRise 3s linear infinite;
+  pointer-events: none;
+}
+
+/* Cercles de pouvoir */
+.patronus-loader .power-ring {
+  position: absolute;
+  border: 2px solid;
+  border-radius: 50%;
+  opacity: 0;
+  animation: ringExpand 2s ease-out infinite;
+}
+
+.patronus-loader .power-ring:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.patronus-loader .power-ring:nth-child(3) {
+  animation-delay: 1s;
+}
+
+/* Orbite binaire */
+.patronus-loader .binary-orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 75%;
+  height: 75%;
+  transform: translate(-50%, -50%);
+  animation: rotate 4s linear infinite;
+  pointer-events: none;
+}
+
+.patronus-loader .binary-digit {
+  position: absolute;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  text-shadow: 0 0 5px var(--color-primary);
+  transition: color 0.3s ease;
+}
+
+/* Texte de chargement */
+.patronus-loader .loading-text {
+  position: absolute;
+  bottom: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  letter-spacing: 2px;
+  animation: textPulse 1.5s ease-in-out infinite;
+  white-space: nowrap;
+}
+
+/* === ANIMATIONS === */
+
+@keyframes phoenixPulse {
+  0%, 100% { 
+    transform: scale(1) translateY(0); 
+  }
+  50% { 
+    transform: scale(1.05) translateY(-5%); 
+  }
+}
+
+@keyframes bodyGlow {
+  from { 
+    box-shadow: 0 0 20px var(--color-primary); 
+  }
+  to { 
+    box-shadow: 0 0 40px var(--color-secondary); 
+  }
+}
+
+@keyframes headBob {
+  0%, 100% { 
+    transform: translateX(-50%) translateY(0); 
+  }
+  50% { 
+    transform: translateX(-50%) translateY(-10%); 
+  }
+}
+
+@keyframes wingFlapLeft {
+  0%, 100% { 
+    transform: rotate(-20deg); 
+  }
+  50% { 
+    transform: rotate(-35deg); 
+  }
+}
+
+@keyframes wingFlapRight {
+  0%, 100% { 
+    transform: rotate(20deg); 
+  }
+  50% { 
+    transform: rotate(35deg); 
+  }
+}
+
+@keyframes tailSway {
+  0%, 100% { 
+    transform: translateX(-50%) rotate(0deg); 
+  }
+  50% { 
+    transform: translateX(-50%) rotate(10deg); 
+  }
+}
+
+@keyframes particleRise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+@keyframes ringExpand {
+  0% {
+    width: 25%;
+    height: 25%;
+    opacity: 0.8;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes rotate {
+  from { 
+    transform: translate(-50%, -50%) rotate(0deg); 
+  }
+  to { 
+    transform: translate(-50%, -50%) rotate(360deg); 
+  }
+}
+
+@keyframes textPulse {
+  0%, 100% { 
+    opacity: 0.6; 
+  }
+  50% { 
+    opacity: 1; 
+  }
+}
+
+/* === VARIANTS === */
+
+/* Success variant */
+.patronus-loader.patronus-success .phoenix {
+  animation: phoenixPulse 2s ease-in-out infinite, successBounce 0.5s ease-out;
+}
+
+@keyframes successBounce {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* Error variant */
+.patronus-loader.patronus-error .phoenix {
+  animation: phoenixPulse 2s ease-in-out infinite, errorShake 0.5s ease-out;
+}
+
+@keyframes errorShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+/* === SIZES === */
+
+/* Small */
+.patronus-loader.patronus-small .loading-text {
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.patronus-loader.patronus-small .binary-digit {
+  font-size: 10px;
+}
+
+.patronus-loader.patronus-small .code-particle {
+  font-size: 8px;
+}
+
+/* Medium (default) */
+.patronus-loader.patronus-medium .loading-text {
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.patronus-loader.patronus-medium .binary-digit {
+  font-size: 14px;
+}
+
+.patronus-loader.patronus-medium .code-particle {
+  font-size: 10px;
+}
+
+/* Large */
+.patronus-loader.patronus-large .loading-text {
+  font-size: 18px;
+  letter-spacing: 3px;
+}
+
+.patronus-loader.patronus-large .binary-digit {
+  font-size: 18px;
+}
+
+.patronus-loader.patronus-large .code-particle {
+  font-size: 14px;
+}
+
+/* === ACCESSIBILITY === */
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .patronus-loader *,
+  .patronus-loader *::before,
+  .patronus-loader *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .patronus-loader .power-ring {
+    border-width: 3px;
+  }
+  
+  .patronus-loader .binary-digit,
+  .patronus-loader .code-particle {
+    text-shadow: none;
+    font-weight: bold;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .patronus-loader {
+    --color-primary: #00D9FF;
+    --color-secondary: #FFD700;
+    --color-accent: #C0C0C0;
+  }
+}
+
+/* === RESPONSIVE === */
+
+@media (max-width: 768px) {
+  .patronus-loader .loading-text {
+    font-size: 12px;
+  }
+  
+  .patronus-loader .binary-digit {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .patronus-loader .loading-text {
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+  
+  .patronus-loader .binary-digit {
+    font-size: 10px;
+  }
+  
+  .patronus-loader .code-particle {
+    font-size: 8px;
+  }
+}
+

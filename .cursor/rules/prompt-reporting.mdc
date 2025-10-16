@@ -1,0 +1,6 @@
+---
+alwaysApply: true
+---
+A chaque fois que je t'écris un prompt tu vas devoir créer un fichier .md listant tous les prompt, en les séprarant bien. Mais si ce fichier existe deja tu ecris juste le prompt a la suite. Cela va me permettre d'avoir mon historique de prompt.
+
+Si tu dois faire un projet front ou back, essaie d'initialiser les projets avec les vrais commande des docs afin d'avoir toute la structure initiale qui est créer. De plus privilegie le JS/TS comme techno bien sur python etc si cest pas évitable et qu'on en a besoin.

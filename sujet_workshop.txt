@@ -1,0 +1,87 @@
+Ce document synthétise les informations clés, les consignes et les attendus pour le workshop M2 qui se déroulera du 13 au 17 octobre 2025.
+
+1. Contexte & Thème
+
+Bienvenue à Poudlard ! Durant cette semaine, vous êtes des apprentis sorciers et votre Intelligence Artificielle est votre "baguette magique". Le but est de relever une série de défis techniques en utilisant exclusivement votre IA pour toute la production.
+
+La Règle d'Or (Absolue)
+
+Il est FORMELLEMENT INTERDIT de coder, retoucher ou modifier manuellement la moindre ligne de code, asset ou fichier de configuration. L'intégralité des livrables, y compris les documents textes, doit être générée par l'IA assignée à votre maison.
+
+Preuve de Travail
+
+Chaque défi validé doit impérativement être accompagné d'un feuillet de prompts contenant l'intégralité des prompts utilisés pour obtenir le résultat final.
+
+2. Organisation
+
+Équipes (Les Maisons)
+
+Les participants sont répartis en trois maisons, chacune associée à une IA spécifique. La maison "Llamador" est hors-compétition cette année.
+
+    GPTaigle : Utilisera ChatGPT Free (GPT-5).
+
+Copilouffle : Utilisera Microsoft Copilot (via Office 365) et GitHub Copilot Free dans les IDE.
+
+Géminiard : Utilisera Gemini 2.5 Flash et 2.5 Pro.
+
+Calendrier de la Semaine
+
+    Lundi 13/10 : Kick-off, formation des équipes (3 à 5 personnes) et démarrage des défis.
+
+Mardi 14/10 & Mercredi 15/10 : Journées dédiées à la réalisation des défis.
+
+Jeudi 16/10 : Fin de la réalisation des défis et préparation des livrables.
+
+Dépôt des livrables : Le jeudi, entre 17h et 18h, selon l'horaire fixé par le campus.
+
+Vendredi 17/10 : Soutenances locales.
+
+3. Livrables Attendus
+
+Deux documents sont à rendre par groupe pour le jeudi soir :
+
+    Un dossier de preuves de travail (Workshop2025-26-M2g<n>-dossier.pdf) 
+
+    Les feuillets de prompts, classés par défi et documentés.
+
+Un schéma organisationnel (ex: Trello) prouvant la gestion de projet (tâches, planification, répartition).
+
+Un support de présentation (Workshop2025-26-M2g<n>-pres.pptx) 
+
+    Présentation de chaque membre de l'équipe en anglais.
+
+Le nombre de points obtenus et la liste des défis réalisés.
+
+Un bilan sur vos apprentissages (LLM, IA, Prompt Engineering).
+
+Une réflexion sur la place des IA génératives dans votre futur métier.
+
+Un bilan "avant/après" workshop sur votre manière de travailler avec l'IA.
+
+4. Soutenances et Évaluation
+
+Soutenance Locale (Vendredi)
+
+    Format : 5 minutes de pitch + 10 minutes de questions/réponses.
+
+Évaluation : La note finale (sur 20) est basée sur une grille d'évaluation (sur 105 points) mixant des critères individuels et de groupe.
+
+Critères clés : Qualité de la présentation , défis réalisés , maîtrise du prompt engineering (preuve de travail) , qualité des livrables , réflexion critique et gestion de projet.
+
+Bonus : Un bonus "Coup de cœur" jusqu'à +1 point peut être attribué.
+
+Finale Nationale (04/11/2025)
+
+    Participants : Le groupe gagnant de chaque campus représentera son école.
+
+Format : Pitch/démo condensé et immersif de 5-7 minutes. L'objectif est de "ne pas voir des slides qui défilent" mais une présentation originale et théâtralisée.
+
+Évaluation : L'accent est mis sur le storytelling, la clarté de la démo, la vulgarisation et le bilan des enseignements.
+
+5. Consignes Générales
+
+    Matériel : Des serveurs peuvent être mis à disposition par le campus dans la limite des disponibilités.
+
+Présence : L'émargement via Edusign est obligatoire. La présence dans les salles attribuées est requise durant les créneaux de travail.
+
+Soutenances : La présence est obligatoire pour tous les apprenants lors des soutenances des autres groupes et pour l'annonce des résultats, tant au niveau local que national.

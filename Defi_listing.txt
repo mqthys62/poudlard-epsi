@@ -1,0 +1,729 @@
+1 :DOCKERWARTS Monter une infrastructure dockerisée complète pouvant supporter un projet big
+
+data comprenant :
+
+Un outil de ticketing (ex : GLPI)
+
+Un outil d’historisation de données (ex : ElasticSearch)
+
+Un outil de monitoring (ex : Grafana)
+
+Un datalake (ex : Cassandra)
+
+Un parefeu (applicatif ou non, pertinence du choix laissé à l’
+
+apprenant)
+
+Des mesures de haute disponibilité.
+
+Rédaction d’
+
+un document expliquant en détail les mesures de sauvegarde et
+
+de reprise d’
+
+activité en cas de défaillance du système (PRA complet).
+
+L’
+
+entièreté des configurations et de l’
+
+architecture doit être documentée.
+
+Le choix des technologies est libre mais doit être cohérent et crédible dans un
+
+environnement professionnel. Il en va de même pour le monitoring, il doit être
+
+clair et permettre la surveillance de votre infrastructure, le choix des charts et le
+
+format des informations sont à votre discrétion.
+
+Prix 50 pts
+
+
+2. PRAcadabra
+
+Mettre en place un PRA permettant l’installation de votre SI et le lancement
+
+de l’intégralité de vos projets avec tout ce que cela implique sur les projets
+
+concernés (dockerisation notamment) :
+
+Sauvegarde des projets de toutes les spécialités avec backups
+
+Scripts Ansible / Terraform permettant l’
+
+automatisation du lancement de
+
+vos projets
+
+Assurer la haute disponibilité
+
+Assurer le monitoring et le health status des projets.
+
+Le document de PRA ne vous est pas demandé pour ce défi mais il devra être
+
+fonctionnel pour l’intégralité des autres défis proposés (Il faut qu
+
+’
+
+au moins 1
+
+autre de vos défis soit compatible avec la mise en place d’
+
+un PRA).
+
+Les points peuvent vous être refusés si le jury considère le PRA comme n
+
+’étant
+
+pas viable pour une solution professionnelle.
+
+Le choix des technologies reste libre et vous devrez documenter votre PRA
+
+ainsi que les raisons des choix effectués pour le rendre crédible.
+
+N°2
+
+Prix 25 pts
+
+
+3.
+
+Cape d’invisibilité
+
+d’Ignotus Peverell
+
+Une intrusion dans un système d’
+
+une école concurrente avec preuve des
+
+données collectées vous donnera des points, si les données récoltées
+
+appartiennent à un apprenant de votre école, vous perdrez des points.
+
+/!\ Le but n
+
+’
+
+est pas de casser leur travail et il est formellement interdit de gêner
+
+la progression des groupes de travail. De plus, la collecte de données
+
+personnelles est strictement interdite.
+
+Un rapport détaillé de vos actions menés pour la collecte de données vous sera
+
+demandée pour valider vos points.
+
+N°3
+
+Prix 55 pts
+
+
+4; Protego Maxima
+
+La défense aux intrusions sera également récompensée, TOUS les coups sont
+
+permis pour la défense !
+
+Nous avons déjà réfléchi aux différentes défenses possibles et les défenses les
+
+plus ingénieuses marqueront plus de points !
+
+Une documentation de chaque action vous sera demandée et devra être apporter
+
+au conseil des ministres afin qu
+
+’il vous attribue le nombre de points mérités.
+
+N°4
+
+Prix 5- pts
+
+
+5 : CI/CD Express
+
+voie 9¾
+
+Assurer l’intégralité du CI/CD de vos défis. Votre CI/CD doit contenir :
+
+Un lancement de tests unitaires.
+
+Un lancement de tests de non-régression.
+
+Une vérification de norme de code (Airbnb pour projet JS, PEP8 pour
+
+projet python).
+
+Un test de votre image docker.
+
+Une compilation de votre projet (si besoin).
+
+Implémentation de sonarQube et vérification de la qualité du projet.
+
+Déploiement du projet si toutes les étapes précédentes sont validées.
+
+Afin que ce défi soit validé il faut que cette CI/CD soit fonctionnelle et
+
+implémenté sur au moins un autre défi compatible avec l’implémentation de ce
+
+processus.
+
+N°5
+
+Prix 25 pts
+
+
+6 : SpookEPSI
+
+Maquetter un site vitrine responsive de l’
+
+epsi version poudlard. Tous les
+
+éléments de la page https://www.epsi.fr/campus/ doivent
+
+être sur votre maquettage et doivent être mobile compatible.
+
+Pour que ce défi soit valide, il faudra présenter une maquette figma comprenant
+
+votre site et un document la charte graphique utilisée comprenant :
+
+Les déclinaisons de couleurs utilisées
+
+Les polices utilisées
+
+Les boutons avec leurs changements d’état
+
+Les animations
+
+Les pictogrammes utilisés
+
+Les logos
+
+Le format de vos components
+
+Votre site doit être prêt à la livraison pour un développeur afin qu
+
+’il puisse être
+
+mis en production dans les plus brefs délais.
+
+N°6
+
+Prix 45 pts
+
+
+7 : Harry Potter 9 ?
+
+Réaliser une vidéo de présentation de l’Epsi version Poudlard ou du
+
+Workshop version cours d’Harry Potter entièrement générée avec image de
+
+synthèse.
+
+Ce défi vous demandera de l’ingéniosité et l’
+
+utilisation de logiciels tierces afin
+
+d’obtenir un résultat final satisfaisant.
+
+La durée de votre vidéo est à votre discrétion mais elle doit être entre 30
+
+secondes et 3 minutes.
+
+Une attention particulière aux détails vous sera demandée si votre vidéo est
+
+courte.
+
+N°7
+
+Prix 30 pts
+
+
+8 : Où estla chambre
+
+des secrets ?
+
+Afin de trouver la chambre des secrets, il faudrait déjà connaître les plans de
+
+Poudlard !
+
+L’objectif de ce défi est de générer en objet 3D les plans de Poudlard et d’
+
+y
+
+mettre en surbrillance la chambre des secrets (myDiL).
+
+Une animation de ce plan doit être présente afin de voir Poudlard sous tous ses
+
+angles. Les éléments demandés :
+
+Bonne répartition des surfaces,
+
+Mûrs bien définis
+
+Portes apparentes
+
+Les éléments bonus :
+
+Les bureaux
+
+Les tableaux
+
+N°8
+
+Prix 100 pts
+
+
+9 : Le patronus d’EPSI
+
+Vous connaissez le patronus de l’ EPSI ?
+
+L’objectif de ce défi est justement de le réaliser.
+
+A vous de faire refléter la force magique de votre école au travers d’
+
+un
+
+patronus. Afin qu
+
+’il reste discret et qu
+
+’il ne soit connu que par les fins
+
+observateurs, faites-en une animation de chargement en 2D pour une page
+
+web ou un logiciel.
+
+Vous gagnerez des points supplémentaires s
+
+’il est intégré dans l’
+
+un de vos autres
+
+défis.
+
+N°9
+
+Prix 30 pts
+
+
+10 : Oculus reparo
+
+Réaliser un cahier des charges crédible sur la transformation digitale complète
+
+d’
+
+un outil de Poudlard.
+
+Votre cahier des charges devra reprendre toutes les fonctionnalités existantes de
+
+l’outil visé et une enquête auprès du conseil des sorciers vous sera demandée
+
+afin d’
+
+améliorer le fonctionnement de l’outil en question.
+
+On valorisera votre côté commercial.
+
+N°10
+
+Prix 55 pts
+
+
+11 : Lecours de
+
+Filius Flitwick
+
+Pour ce défi, vous incarnerez le professeur le plus sympa de tout Poudlard (pas
+
+de débats possibles). Poudlard étant en plein renouveau, beaucoup d’outils ont
+
+changés récemment.
+
+Vous allez donc devoir définir un scénario d’
+
+accompagnement au changement
+
+sur une transformation digitale de votre choix en prenant en compte des
+
+différents stades de la courbe de Kubler-Ross et en prenant compte du
+
+framework ADKAR (ou équivalent / 7s de McKinsey accepté).
+
+Ayez en tête toutes les parties prenantes afin que votre document puisse être
+
+complet.
+
+N°11
+
+Prix 45 pts
+
+
+12 : Harry Potter
+
+Starter Pack
+
+Créer le starter pack d’
+
+un étudiant de votre école. Les plus originaux ou drôles
+
+seront récompensés.
+
+N°12
+
+Prix 5 pts
+
+
+13 : On n’avait pas cours
+
+avec McGonagall ?
+
+Générer un exécutable Windows permettant à une fenêtre de récupérer votre
+
+emploi du temps par le biais de l’API de
+
+“
+
+wigorservices
+
+”
+
+avec vos credentials
+
+(username ou cookies).
+
+Ce défi devra être entièrement documenté et testé unitairement (Coverage >80%).
+
+Les technologies utilisées doivent être cohérentes et adaptées au défi.
+
+Une justification est attendue.
+
+N°13
+
+Prix 35 pts
+
+
+14 : La boite magique de
+
+Serverus Rogue
+
+Comme vous le savez tous, Rogue à plus d’
+
+un tour dans son sac !
+
+Il va ici falloir développer un outil qui vous facilitera la vie peu importe les
+
+conditions dans lesquelles vous travaillez.
+
+L’objectif de ce défi est de faire un logiciel cross-platform Linux/Windows
+
+avec un Cmake pour la compilation permettant l’
+
+ajout de toutes vos sources et
+
+documents du Workshop sur votre Github.
+
+N°14
+
+Prix 25 pts
+
+
+15 : Hedwige
+
+Vous avez entendu parler du fait qu
+
+’Hedwige commençait à se faire vieille ?
+
+Il va falloir trouver un moyen d'
+
+effectuer son travail précieux. Pour cela, vous
+
+allez devoir créer une web app permettant :
+
+La réception et l’
+
+envoi de mail avec votre mail étudiant.
+
+La connexion à n
+
+’importe quel service pouvant améliorer votre vie
+
+d’
+
+apprenti sorcier (Connexion au service OAuth2.0 obligatoire).
+
+Ce travail doit contenir un front et un middleware documenté et testé
+
+unitairement.
+
+NB : la pertinence des technologies utilisées pourra vous rapporter des bonus
+
+ou malus.
+
+N°15
+
+Prix 80 pts
+
+
+16 : Tu es un sorcier
+
+Harry !”
+
+Oui mais lequel ?
+
+Pour savoir ça, vous allez devoir créer une application mobile cross-platform
+
+(Android X iOS).
+
+Il devra comporter un QCM de 20 questions permettant de définir quel type
+
+de sorcier vous êtes (au moins 4 types de sorciers différents).
+
+Votre originalité et votre inspiration pour vos questions et types de sorciers
+
+pourraient vous rapporter des points.
+
+Un document vous sera demandé afin d’établir la gamification faite dans votre
+
+projet et les résultats attendus en fonction des chemins choisis.
+
+N°16
+
+Prix 45 pts
+
+
+17 : Tableau des scores
+
+de Poudlard
+
+Dumbledore à une bonne mémoire mais nous nous sommes toujours demandé si
+
+les points pour chaque école étaient réellement comptabilisés.
+
+Pour ce défi, vous allez devoir créer une application mobile native (Kotlin ou
+
+Swift) qui permettrait à Dumbledore de compter les points des 4 écoles avec un
+
+front, une API et une base de données de votre choix (BaaS exclu).
+
+Votre projet devra être documenté et testé unitairement (Coverage >80%).
+
+N°17
+
+Prix 35 pts
+
+
+18 : Lecadet de votre
+
+école
+
+L’IA représentant votre école a eu de nombreuses évolutions depuis sa
+
+création.
+
+Afin de voir tout le chemin parcouru par les anciens de votre école, déployez la
+
+plus petite version de LLM de l’IA représentant votre école en local sur votre
+
+machine.
+
+NB : Il n
+
+’
+
+est pas spécialement question de déployer la version la plus ancienne
+
+ou la moins optimisée.
+
+Afin de réussir à déployer votre IA en local, veillez à prendre le modèle qui
+
+comporte le moins de paramètres.
+
+N°18
+
+Prix 25 pts
+
+
+19 : Professeur
+
+Dumbledore
+
+Professeur Dumbledore doit vous apprendre à correctement prononcer vos
+
+formules magiques.
+
+Dans ce défi, vous devrez réaliser une IA de reconnaissance vocale pour vos
+
+formules magiques.
+
+Elle doit être en mesure de reconnaître au moins 8 formules magiques des livres
+
+ou films d’Harry Potter.
+
+(Informez-vous au sujet des NLU, NLP et NLG).
+
+Il va falloir faire preuves d’ingéniosité sur la manière de créer votre dataset.
+
+N°19
+
+Prix 65 pts
+
+
+20 : Is iT yOu
+
+hARrY?
+
+Créer un réseau de neurones convolutif sur un Jupiter Notebook permettant
+
+la reconnaissance des personnages d’Harry Potter avec images des acteurs ou
+
+images de synthèse.
+
+Afin que ce défi soit validé, votre IA doit être capable de reconnaître au moins
+
+10 personnages de la saga Harry Potter de votre choix.
+
+Pensez tout de même qu
+
+’il sera nettement plus facile de créer vos datasets si
+
+les personnages sont connus ou populaires.
+
+N°20
+
+Prix 30 pts
+
+
+21 : Le nimbus 3000
+
+Récupérer un réseau de neurones déjà existant (ou celui du défi “Is iT yOu hARrY”)
+
+et faire un benchmark des optimizers les plus connus :
+
+Adadelta
+
+Adagrad
+
+RMSProp
+
+Adam
+
+SGD
+
+Adan
+
+AdamW
+
+L’objectif est d’obtenir une documentation format papier de recherche qui démontre
+
+quels sont les optimizers les plus adaptés à votre réseau de neurones. La documentation
+
+doit être intégralement générée à l’
+
+aide de votre baguette magique.
+
+NB : Des applications ou logiciels tierces comme Weight and Biasis peuvent vous être
+
+très utiles.
+
+N°21
+
+Prix 25 pts
+
+
+22 : Le procès de J.K.
+
+Rowling
+
+Il est temps pour nous de faire une rétrospective objective de toute la saga Harry Potter.
+
+L’idée est de savoir si les livres sont de plus en plus qualitatifs ou non. Pour se faire, un
+
+peu de data visualisation s
+
+’impose :
+
+Le nombre de fois ou harry potter touche sa cicatrice (ça fait mal).
+
+Le nombre de fois ou hermione dit “Mais
+
+” (Elle est insupportable).
+
+Le nombre de fois ou dumbledore change le cours de l’histoire parce qu
+
+’il en a envie
+
+(tourne et retourne la chemise).
+
+Comparaison du nombre de prises de paroles entre hermione, harry et ron (qui est le
+
+plus bavard ?).
+
+Le nombre de fois ou rogue est mystérieux ou dark (just Rogue being Rogue).
+
+Le nombre d’
+
+acte moralement ou pénalement répréhensible par la loi de Poudlard ou
+
+française se déroulant pendant les livres (MAIS QUE FAIT LA POLICE ?).
+
+Décliner les stats par livre et en extraire des tendances
+
+Bonus : les livres ne faisant pas tous la même longueur, déterminer, pour chaque livre,
+
+toutes ces statistiques par pages ou par centaines de pages afin de pouvoir déterminer
+
+la récurrence de ces faits.
+
+Une documentation vous sera demandée afin de nous expliquer comment vous avez pu
+
+déterminer ces statistiques.
+
+N°22
+
+Prix 100 pts
+
+
+23 :
+
+EASTER EGGS
+
+Vous rentrez ici dans la section du chaos, celle ou l’ombre et la magie noire l’
+
+emporte
+
+sur tout le reste, le royaume de Tom Jedusor.
+
+Si vous réalisez ces défis, nous refuserons catégoriquement de croire que vous ne
+
+l’
+
+avez pas fait exprès.
+
+Montrez-nous vos talents en magie noire !
+
+1. Faire planter votre IA.
+
+2. Retrouver des datas d’
+
+entraînement de l’IA en faisant du reverse engineering. Une
+
+explication des procédés vous seront demandés.
+
+3. Votre compte est bloqué sur l’IA de votre école.
+
+4. Faire une fork bomb efficace nommée
+
+“Avada
+
+_
+
+kedavra.exe
+
+” (à vos risques et périls)
+
+N°23
+
+Prix pts 

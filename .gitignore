@@ -1,0 +1,87 @@
+# Node
+node_modules/
+**/node_modules/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Typescript / builds
+*.tsbuildinfo
+**/dist/
+**/build/
+**/.turbo/
+**/.parcel-cache/
+**/.cache/
+
+# Vite/Next/React
+**/.vite/
+**/.next/
+**/web-build/
+
+# Expo
+**/.expo/
+.expo-shared/
+
+# Electron
+**/out/
+**/release/
+**/*.asar
+
+# Python
+**/.venv/
+**/venv/
+**/__pycache__/
+**/*.py[cod]
+**/.ipynb_checkpoints/
+
+# Data/outputs (projets ML & data viz)
+**/outputs/
+**/results/
+**/models/
+**/dataset/
+**/datasets/
+
+# Coverage
+coverage/
+**/coverage/
+*.lcov
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Env / secrets
+.env
+.env.*
+**/.env
+**/.env.*
+
+# Images auto-générées lourdes (laisser les sources)
+**/*.png
+**/*.jpg
+**/*.jpeg
+**/*.gif
+!defis/**/README*.png
+!defis/**/docs/*.png
+
+# Archives
+*.zip
+*.tar
+*.tar.gz
+
+# ML model weights (large files)
+**/*.h5
+**/*.hdf5
+**/*.onnx
+**/*.pt
+**/*.pth
+
+defis/20_CNN_Harry/best_model.h5
+defis/20_CNN_Harry/harry_potter_cnn_final.h5
