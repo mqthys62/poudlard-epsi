@@ -73,190 +73,6 @@ Fini hedwige et apres on testera ce que tu as fait. oublie pas de reprendre cont
 - Reprendre le contexte des fichiers du projet
 - Cocher le todo.md progressivement
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-**Plan de finalisation Hedwige :**
-1. Configuration Prisma + schema BDD
-2. Backend complet (routes, controllers, auth)
-3. Frontend React complet
-4. Tests unitaires
-5. Dockerfiles
-6. Variables d'environnement
-
-**Réalisation finale :**
-- ✅ Prisma schema avec tous les modèles (User, Email, Contact, OAuth, etc.)
-- ✅ Backend complet : controllers (auth, email), routes, middleware JWT, logger
-- ✅ Serveur Express avec sécurité (helmet, cors, rate limiting)
-- ✅ Frontend React complet : 5 pages (Login, Inbox, Compose, Detail, Settings)
-- ✅ State management avec Zustand + React Query
-- ✅ Components : Layout, EmailList, **PatronusLoader intégré (Défi #9)** ✨
-- ✅ Dockerfiles backend + frontend
-- ✅ Docker Compose avec PostgreSQL, Redis, MailHog, Adminer
-- ✅ Variables d'environnement (env.example.txt)
-- ✅ README et documentation complète
-
-**Résultat :** Hedwige 100% terminé - Application de messagerie complète avec OAuth2.0, IMAP/SMTP, et intégration du Patronus Loader !
-
-**Points obtenus :** 80 pts + 5 pts bonus = **85 points**
-
 ---
 
 ## Prompt 5 - 13/10/2025
@@ -1687,7 +1503,7 @@ Ok bon la cest la revu des points je dois faire valider mes points peux tu me di
 ```
 
 **Contexte :**
-- Besoin d’un document unique listant les défis 100% terminés avec procédures de tests locales.
+- Besoin d'un document unique listant les défis 100% terminés avec procédures de tests locales.
 
 **Actions :**
 - Création/complétion du fichier `Test-complet-defis.md` avec sections par défi et commandes de test.
@@ -1702,10 +1518,10 @@ Et donc la dans le test complet defi, enfaite dans le lsiting de base on avait l
 ```
 
 **Contexte :**
-- Le document doit intégrer les critères d’acceptation issus du sujet/listing.
+- Le document doit intégrer les critères d'acceptation issus du sujet/listing.
 
 **Actions :**
-- Ajout sous chaque défi de la section "Critères d’acceptation (selon sujet)" dans `Test-complet-defis.md`.
+- Ajout sous chaque défi de la section "Critères d'acceptation (selon sujet)" dans `Test-complet-defis.md`.
 
 ---
 
@@ -1721,7 +1537,7 @@ Le defi 22 valide il tous les criteres ? Car la il faut que les défis valident 
 
 **Actions :*
 - Audit rapide vs `Test-complet-defis.md` et livrables `defis/22_Proces_JK_Rowling/outputs/`.
-- Synthèse de conformité et éventuels points d’attention (OAuth2 sur #15 si exigence stricte).
+- Synthèse de conformité et éventuels points d'attention (OAuth2 sur #15 si exigence stricte).
 
 ---
 
@@ -1733,7 +1549,7 @@ Peux tu me dire la commande pour le defi 16 avec le tunnel et ngrok car je suis 
 ```
 
 **Contexte :**
-- Lancement Expo (Défi #16) depuis WSL avec partage de connexion; besoin d’un tunnel.
+- Lancement Expo (Défi #16) depuis WSL avec partage de connexion; besoin d'un tunnel.
 
 **Actions :**
 - Fourniture des commandes `npx expo start --tunnel --clear --port 8082` et alternatives si ports occupés.
@@ -1765,9 +1581,66 @@ nettoie moi tout l'historique de commit etc refais tout au propre dans 1 commit 
 ```
 
 **Contexte :**
-- Push refusé par GitHub (fichiers >100MB restés dans l’historique).
+- Push refusé par GitHub (fichiers >100MB restés dans l'historique).
 
 **Actions planifiées :**
 - Orphan branch (`git checkout --orphan`), re-index propre avec .gitignore, commit unique, remplacement de `main`, push --force.
 - Nettoyage GC agressif pour réduire la taille locale.
+
+---
+
+## Prompt 29 - 16/10/2025
+
+**Prompt utilisateur :**
+```
+Ok bon la enfaite on va preparer la presentation oral pour la presentation du workshop et on a penser que ca serait une bonne idée de t'inclure dedans en mode 5eme membre du groupe et que tu dises comment tu as travaillé etc. Donc enfaite on aimerait que tu expliques de maniere courte et propre sous forme de petit paragraphe Comment tu as réalisé les défi, les contraintes, ce qui a été plus chiant ou autre. Donc en defi j'aimerai que tu explique le defi 16, le 09, par rapport a SpookEpsi tu peux dire que tu as aidé leo a généré les images pour la maquette figma et pour finir le defi 18. Ecris moi totu ca dans un fichier markdown nommé Discours-oral-ia.md DONC je veux un paragraphe par defi
+```
+
+**Contexte :**
+- Préparation d'un discours court pour l'oral du workshop, voix de l'IA « 5ᵉ membre ».
+- Synthèse par défis: #16, #09, SpookEpsi (génération d'images Figma avec Léo), #18.
+
+**Actions :**
+- Rédaction de 4 paragraphes concis dans `Discours-oral-ia.md` (un par élément demandé).
+- Ton professionnel, focus sur défis, contraintes, irritants, méthodes.
+
+---
+
+## Prompt 30 - 16/10/2025
+
+**Prompt utilisateur :**
+```
+Peux tu me condenser les defi 09, 16 et 18 en un paragraphe parcontre précise bien de quel defi tu parles quand tu commence a parler de ce defi
+```
+
+**Contexte :**
+- Demande de condensation des sections 09, 16 et 18 en un paragraphe unique.
+- Nécessité de nommer explicitement chaque défi au début de sa partie.
+
+**Actions :**
+- Fusion en un seul paragraphe structuré « Défi 09 — …; Défi 16 — …; Défi 18 — … ».
+- Nettoyage du caractère superflu en fin de `Discours-oral-ia.md`.
+
+---
+
+## Prompt 31 - 16/10/2025
+
+**Prompt utilisateur :**
+```
+Ahhh oui mais la tu as bcp trop condensé en gros faut se dire que tu as 1min de parole
+```
+
+**Contexte :**
+- Besoin d'une version plus étoffée (~1 minute) tout en restant concise et claire.
+
+**Actions :**
+- Étoffer la synthèse des défis 09/16/18 dans `Discours-oral-ia.md` avec intitulés explicites.
+
+---
+
+---
+Date: 2025-10-17T09:22:55+02:00
+User: mathys
+Prompt:
+Recheck moi tous le projet et les fichiers @sujet_workshop.txt et la le but est de validé tout. Donc a ton une documentation pour tout ? etc afin que ce soit completement validé pareil par rapport au @Defi_listing.txt check moi tout si tout est correct selon ce qui été demandé
 
